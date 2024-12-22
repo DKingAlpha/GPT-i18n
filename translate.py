@@ -144,7 +144,7 @@ class GameLanguages:
                     else:
                         new_translation.update(name, path, output)
                 print('='*32, LANGCODE_NAMES[langcode], '->', name.as_posix())
-                tf.walk(callback, ordered=False)
+                tf.walk(callback, ordered=False)    # optimization for mixed str|dict, reduce api calls. orders has been ensured
                 new_translation.save(name)
             self.translations[langcode] = new_translation
 
@@ -184,12 +184,9 @@ def translate_internal(target_lang: str, content: OrderedDict[str, str]) -> tupl
         prompt_terms = f'Here are some terms for your reference: {json.dumps(LANG_TERMS[target_lang], ensure_ascii=False)}\n'
 
     system_message = {'role': 'system', 'content': 
-        'You are now a i18n text translator for open source RTS game "Beyond All Reason".'
-        'Here is the game content for you to optimize your translation: '
-        '\tScientific. Command colossal armies in battles with thousands of units in fully simulated environments.'
-        '\tWage war across land, sea, and air with 2 factions and 400 unique units.\n\n'
+        'You are now an i18n text translator.\n'
 
-        'Keep translation concise and comprehensive. For polysemy words you are not sure, take a guess based on provided game information. '
+        'Keep translation concise and comprehensive. For polysemy words you are not sure, take a reasonable guess.\n'
         'If no idea at all, you can leave them as is.\n'
 
         f'{prompt_terms}\n'

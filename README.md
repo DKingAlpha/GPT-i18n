@@ -6,8 +6,8 @@ This is the script I use to translate game text from English to other languages 
 
 1. Check the game [Beyond-All-Reason/language][BAR] for files layout and content format.
 2. Edit global vars in `translate.py`.
-3. Run `translate.py`
-4. other languages will be generated in the output folder, preserving the original layout and order.
+3. `pip install openai tiktoken`, Run `translate.py` with recent `python3`.
+4. Translated files in other languages will be generated in the output folder, preserving the original layout and order. Token limits are respected as well.
 
 ### Cost
 
