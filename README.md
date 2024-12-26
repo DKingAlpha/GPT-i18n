@@ -2,6 +2,18 @@
 
 This is the script I use to translate game text from English to other languages using OpenAI's GPT-4o-mini.
 
+### Features
+
+1. 1-click from en to cn or other languages. Input a folder, output a folder.
+2. Keep all orders and layout, double checked.
+3. Respect max token limits, yet not affected.
+
+### Cost Estimation
+
+$0.1 per language for all texts in [Beyond-All-Reason][BAR], around 320778 tokens.
+
+[BAR]: https://github.com/beyond-all-reason/Beyond-All-Reason/tree/master/language
+
 ## Usage
 
 1. Check the game [Beyond-All-Reason/language][BAR] for files layout and content format.
@@ -9,11 +21,6 @@ This is the script I use to translate game text from English to other languages 
 3. `pip install openai tiktoken`, Run `translate.py` with recent `python3`.
 4. Translated files in other languages will be generated in the output folder, preserving the original layout and order. Token limits are respected as well.
 
-### Cost
-
-$0.1 per language for all texts in [Beyond-All-Reason][BAR], around 320778 tokens.
-
-[BAR]: https://github.com/beyond-all-reason/Beyond-All-Reason/tree/master/language
 
 ### Console Output Example
 
