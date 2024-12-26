@@ -7,6 +7,7 @@ This is the script I use to translate game text from English to other languages 
 1. 1-click from en to cn or other languages. Input a folder, output a folder.
 2. Keep all orders and layout, double checked.
 3. Respect max token limits, yet not affected.
+4. Support glossary to optimize translation.
 
 ### Cost Estimation
 
