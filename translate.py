@@ -9,7 +9,7 @@ from collections import OrderedDict
 import tiktoken
 import json
 
-OPENAI_CLIENT = OpenAI(api_key='<FILL YOUR KEY>')
+OPENAI_CLIENT = OpenAI(api_key='<FILL IN YOUR KEY>')
 
 REF_LANGUAGE = 'en'
 LANGUAGE_DIR = Path(__file__).parent.parent / 'language'
